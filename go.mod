@@ -3,12 +3,12 @@ module github.com/hedwigz/ent-tidb
 go 1.17
 
 require (
-	entgo.io/ent v0.10.2-0.20220310154057-2853afc1dc2e
+	entgo.io/ent v0.10.2-0.20220313150850-a27f753bc800
 	github.com/go-sql-driver/mysql v1.6.0
 )
 
 require (
-	ariga.io/atlas v0.3.7-0.20220303204946-787354f533c3 // indirect
+	ariga.io/atlas v0.3.8-0.20220313134928-770640fc02bf // indirect
 	github.com/agext/levenshtein v1.2.1 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/go-openapi/inflect v0.19.0 // indirect
@@ -20,6 +20,3 @@ require (
 	golang.org/x/mod v0.5.1 // indirect
 	golang.org/x/text v0.3.7 // indirect
 )
-
-// TODO: remove once atlas pushed
-replace ariga.io/atlas => /home/amit/dev/atlas
