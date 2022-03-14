@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	client, err := ent.Open("mysql", "root@tcp(localhost:4000)/test?parseTime=true")
+	client, err := ent.Open("mysql", "root@tcp(localhost:4000)/test?parseTime=true", ent.Debug())
 	if err != nil {
 		log.Fatalf("failed opening connection to sqlite: %v", err)
 	}
@@ -25,11 +25,6 @@ func main() {
 		SetAge(30).
 		SetName("hedwigz").
 		SaveX(context.Background())
-
-	users := client.User.Query().AllX(context.Background())
-
-	for i := 0; i < len(users); i++ {
-		u := users[i]
-		fmt.Printf("the user: %s is %d years old\n", u.Name, u.Age)
-	}
+	user := client.User.Query().FirstX(context.Background())
+	fmt.Printf("the user: %s is %d years old\n", user.Name, user.Age)
 }
