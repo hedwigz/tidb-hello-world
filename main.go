@@ -23,7 +23,8 @@ func main() {
 
 	client.User.Create().
 		SetAge(30).
-		SetName("hedwigz").SaveX(context.Background())
+		SetName("hedwigz").
+		SaveX(context.Background())
 
 	users := client.User.Query().AllX(context.Background())
 
